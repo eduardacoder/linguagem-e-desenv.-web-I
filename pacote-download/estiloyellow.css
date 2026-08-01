@@ -1,0 +1,112 @@
+:root{
+    --azul-ufca: #f3c877;
+    --vermelho-ufca: #aa2403;
+    --borda: #9fcfdb;
+    --texto: rgb(75, 56, 49);
+}
+
+*{margin:0}
+
+body{
+    font-family:'Open Sans','Helvetica Neue', Arial, sans-serif;
+    background: hsl(49, 100%, 90%);
+    color: var(--texto);
+    padding: 30px;
+}
+
+body > div{
+    max-width: 1100px;
+    margin: auto;
+}
+
+body > div > div{
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+    overflow: hidden;
+}
+
+h3{
+    background-color:var(--azul-ufca);
+    color: var(--texto);
+    text-align: center;
+    padding: 25px;
+    font-size: 30px;
+    letter-spacing: 1px;
+
+}
+h3::before{content: "";
+  display: inline-block;
+  width: 100px;
+  height: 30px;
+  background-image: url('logo-ufca.png');
+  background-size: cover;
+  margin-right: 35px;
+}
+
+form{padding: 30px;}
+
+form > div{
+    background: #fcfaf8;
+    border-left: 5px solid var(--vermelho-ufca);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+fieldset{
+    border: 2px solid var(--azul-ufca);
+    border-radius: 10px;
+    padding: 25px;
+}
+
+legend{
+    padding: 0 10px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--texto);
+}
+
+label{
+    display: inline-block;
+    width: 230px;
+    font-weight: 600;
+    margin-top: 12px;
+}
+
+input[type=text],
+input[type=email],
+select{
+    padding: 10px 10px;
+    border: 1px solid var(--borda);
+    border-radius: 6px;
+    font-size: 14px;
+    max-width: 100%;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+select:focus{
+    outline: none;
+    border-color: var(--azul-ufca);
+}
+
+a:hover{
+    color: var(--vermelho-ufca);
+}
+
+input[type=submit],
+input[type=reset]{
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,.4);
+    font-size: 15px;
+    font-weight: 700;
+    background: var(--texto);
+    color: white;
+}
+input[type=reset]:active{
+    transform: scale(0.98);
+}

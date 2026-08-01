@@ -1,0 +1,30 @@
+.maior{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.c1{
+    display: flex;
+    background-color: aqua;
+    text-align: center;
+    width: 180px;
+    margin: 15px;
+    padding: 20px;
+    font-size: 30px;
+}
+.i1{
+    order: 1;
+    flex-grow: 1;
+    background-color: blue;
+}
+.i2{
+    order: 2;
+    flex-grow: 1;
+    background-color: blue;
+}
+.i3{
+    order: 3;
+    flex-grow: 1;
+    background-color: blue;
+}

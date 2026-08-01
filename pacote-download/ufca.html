@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>Ficha Catalogr&aacute;fica</title>
+
+        <link rel="stylesheet" href="estiloazul.css" >
+    </head>
+
+    <body>
+        <div class="cores">
+            <div>
+                <h3>FICHA CATALOGR&Aacute;FICA</h3>
+
+          
+                <form name="ficha" method="post" action="ficha2.php">
+	
+                    <div>
+                    	<div>Ajuda</div>- <a href="Tutorial_fichacat_2011.pdf" target="_blank">Tutorial para preenchimento</a> (pdf)<br />- <a href="FichaCat_diretrizes_2011.pdf" target="_blank">Orienta&ccedil;&otilde;es b&aacute;sicas</a> (pdf)
+                    </div>
+
+                    <fieldset>
+                        <legend>Dados para ficha catalogr&aacute;fica</legend>
+                        <div id="autores">
+                        	<label></label><a href="#" onclick="adicionarCampo(event)">Adicionar Autor</a></br>
+                        	<label>Nome:</label> <input type="text" name="nome[]" size="70"><br />
+                        	<label>Sobrenome:</label> <input type="text" name="sobrenome[]" size="70">
+                        	<br />
+                        </div>
+                        <label>T&iacute;tulo do trabalho:</label> <input type="text" name="titulo" size="70">
+                        <br />
+                        <label>C&oacute;digo Cutter:</label> <input type="text" name="cutter" size="6"> <a href="https://www.tabelacutter.com/" target="_blank">Ver tabela</a>
+                        <br />
+                        <label>Cidade:</label>
+                        <input type="radio" id="cidade" name="cidade" value="Barbalha" checked onClick="mudaPrograma()"> Barbalha <br />
+                        <label></label><input type="radio" id="cidade"  name="cidade" value="Brejo Santo" onClick="mudaPrograma()"> Brejo Santo<br />
+                        <label></label><input type="radio" id="cidade"  name="cidade" value="Crato" onClick="mudaPrograma()"> Crato <br />
+                        <label></label><input type="radio" id="cidade"  name="cidade" value="Juazeiro do Norte" onClick="mudaPrograma()"> Juazeiro do Norte <br />
+                        <label></label><input type="radio" id="cidade"  name="cidade" value="Ead" onClick="mudaPrograma()"> Educação a Distância <br /><br />
+                        <label>Trabalho:</label>
+                        <input type="radio" name="trabalho" id="trabalho" value="Tese" checked onClick="mudaPrograma()"> Tese <br />
+                        <label></label><input type="radio" name="trabalho" id="trabalho" value="Dissertação" onClick="mudaPrograma()"> Disserta&ccedil;&atilde;o<br />
+                        <label></label><input type="radio" name="trabalho" id="trabalho" value="Trabalho de Conclusão de Curso (Especialização)" onClick="mudaPrograma()"> Trabalho de Conclusão de Curso (Especialização) <br />
+                        <label></label><input type="radio" name="trabalho" id="trabalho" value="Trabalho de Conclusão de Curso (Graduação)" onClick="mudaPrograma()"> Trabalho de Conclusão de Curso (Graduação) <br /><br />
+                        
+                        <label>Programa:</label> 
+                        <select name="programa" id="programa">
+                            <option value="Programa de Pós-Graduação Multicêntrico na área de Bioquímica e Biologia Molecular (PMBqBM)">Programa de Pós-Graduação Multicêntrico na área de Bioquímica e Biologia Molecular (PMBqBM)</option>
+                        </select>
+                        </br></br>
+                        <label>Nome do orientador:</label> <input type="text" name="nome_ori" size="50"><br />
+                        <label>Sobrenome do orientador:</label> <input type="text" name="sobrenome_ori" size="50"> 
+                        <input type="checkbox" name="orientadora" value="a"> orientadora<br />
+                        <label>Titulação do orientador:</label> 
+                        <select name="titulacaoOri">
+                           <option value="Prof. Dr.">Prof. Dr.</option>
+                           <option value="Prof. Me.">Prof. Me.</option>
+                           <option value="Prof. Esp.">Prof. Esp.</option>
+                        </select><br /><br />
+                        <label>Nome do coorientador:</label> <input type="text" name="nome_coori" size="50"><br />
+                        <label>Sobrenome do coorientador:</label> <input type="text" name="sobrenome_coori" size="50"> 
+                     
+                        <input type="checkbox" name="coorientadora" value="a"> coorientadora<br />
+<label>Titulação do coorientador:</label> 
+                        <select name="titulacaoCo">
+                           <option value="Prof. Dr.">Prof. Dr.</option>
+                           <option value="Prof. Me.">Prof. Me.</option>
+                           <option value="Prof. Esp.">Prof. Esp.</option>
+                        </select><br /><br />
+                        <label>Ano:</label>  <input type="text" name="ano" size="6"><br />
+                        <label>n<sup>o</sup> de p&aacute;ginas:</label>  <input type="text" name="pags" size="6"><br />
+                        <label>Página inicial da Bibliografia:</label>  <input type="text" name="pagInit" size="6"><br />
+                        <label>Página final da Bibliografia:</label>  <input type="text" name="pagEnd" size="6"><br />
+                        <label>Possui Ilustração:</label>  
+                        <select name="ilustracao">
+                            <option value="il.">Sim</option>
+                            <option value="">Não</option>
+                        </select> <input type="checkbox" name="color" value="color"> colorida<br />
+                        <br /><br />
+                        <div><a href="http://143.107.154.62/Vocab/" target="_blank">Consulta opcional ao Vocabul&aacute;rio Controlado da USP</a></div>
+                        </br>
+                        <div class="assunto">
+                        <label>Assuntos (min. 3, max. 5): </label><br />
+                        </div>
+                        <label>&nbsp;</label> 1. <input type="text" name="assunto1" size="50"> 
+                        <br />
+                        <label>&nbsp;</label> 2. <input type="text" name="assunto2" size="50"> <br />
+                        <label>&nbsp;</label> 3. <input type="text" name="assunto3" size="50"> <br />
+                        <label>&nbsp;</label> 4. <input type="text" name="assunto4" size="50"> <br />
+                        <label>&nbsp;</label> 5. <input type="text" name="assunto5" size="50"> <br /><br />
+                        </div>
+                        
+                        <label>&nbsp;</label><br />
+                        <label>E-mail</label><input type="email" name="email" size="50"> <br /><br />
+                        <input type="submit" name="Enviar Dados" value="Enviar Dados" class="btn" />
+                        <input type="reset" name="Limpar" value="Limpar" class="btn btn-sm btn-default" />
+                        <br /><br />
+                    </fieldset>
+                </form>
+            
+        </div>
+         
+        <script>
+    function adicionarCampo(event) {
+      event.preventDefault(); // impede o link de recarregar a página
+
+      const label = document.createElement("label");
+      label.innerHTML = "Nome:";
+      document.getElementById("autores").appendChild(label);
+      
+      const input = document.createElement("input");
+      input.type = "text";
+      input.name= "nome[]";
+      input.size="70";
+      document.getElementById("autores").appendChild(input);
+      const br = document.createElement("br");
+      document.getElementById("autores").appendChild(br);
+      const label2 = document.createElement("label");
+      label2.innerHTML = "Sobrenome:";
+      document.getElementById("autores").appendChild(label2);
+      const input2 = document.createElement("input");
+      input2.type = "text";
+      input2.name= "sobrenome[]";
+      input2.size="70";
+
+      document.getElementById("autores").appendChild(input2);
+      document.getElementById("autores").appendChild(br);
+
+    }
+    function mudaPrograma(){
+        const cidade = document.querySelector('input[name="cidade"]:checked').value;
+        const trabalho = document.querySelector('input[name="trabalho"]:checked').value;
+        cursos = "";
+        if(cidade == "Barbalha"){
+             if(trabalho == "Tese"){
+                 cursos = '<option value="Programa de Pós-Graduação Multicêntrico na área de Bioquímica e Biologia Molecular (PMBqBM)">Programa de Pós-Graduação Multicêntrico na área de Bioquímica e Biologia Molecular (PMBqBM)</option>';
+             }else if(trabalho == "Dissertação"){
+             cursos+='<option value="Programa de Pós-Graduação em Ciências da Saúde">Programa de Pós-Graduação em Ciências da Saúde</option>' ;
+cursos+='<option value="Programa de Pós-Graduação em Saúde da Família (PROFSAÚDE)">Programa de Pós-Graduação em Saúde da Família - PROFSAÚDE</option>' ;
+cursos+='<option value="Programa de Pós-Graduação Multicêntrico na área de Bioquímica e Biologia Molecular (PMBqBM)">Programa de Pós-Graduação Multicêntrico na área de Bioquímica e Biologia Molecular (PMBqBM)</option>' ;
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Especialização)"){
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Graduação)"){
+             cursos+='<option value="Bacharelado em Farmácia">Bacharelado em Farmácia</option>' ;
+cursos+='<option value="Bacharelado em Medicina">Bacharelado em Medicina</option>' ;
+cursos+='<option value="Bacharelado em Psicologia">Bacharelado em Psicologia</option>' ;
+             }
+        }else if(cidade == "Brejo Santo"){
+             if(trabalho == "Tese"){
+             }else if(trabalho == "Dissertação"){
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Especialização)"){
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Graduação)"){
+             cursos+='<option value="Licenciatura em Biologia">Licenciatura em Biologia</option>' ;
+cursos+='<option value="Licenciatura em Física">Licenciatura em Física</option>' ;
+cursos+='<option value="Licenciatura em Interdisciplinar em Ciências Naturais">Licenciatura em Interdisciplinar em Ciências Naturais</option>' ;
+cursos+='<option value="Licenciatura em Matemática">Licenciatura em Matemática</option>' ;
+cursos+='<option value="Licenciatura em Pedagogia">Licenciatura em Pedagogia</option>' ;
+cursos+='<option value="Licenciatura em Química">Licenciatura em Química</option>' ;
+             }
+        }else if(cidade == "Crato"){
+             if(trabalho == "Tese"){
+             }else if(trabalho == "Dissertação"){
+             cursos+='<option value="Programa de Pós-Graduação em Desenvolvimento Regional Sustentável (Proder)">Programa de Pós-Graduação em Desenvolvimento Regional Sustentável (Proder)</option>';
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Especialização)"){
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Graduação)"){
+             cursos+='<option value="Bacharelado em Agronomia">Bacharelado em Agronomia</option>' ;
+cursos+='<option value="Bacharelado em Medicina Veterinária">Bacharelado em Medicina Veterinária</option>' ;
+             }
+        }else if(cidade == "Juazeiro do Norte"){
+             if(trabalho == "Tese"){
+                 cursos = '<option value="Programa de Pós-graduação em Biblioteconomia (MPB)">Programa de Pós-graduação em Biblioteconomia (MPB)</option>';
+             }else if(trabalho == "Dissertação"){
+             curso+='<option value="Programa de Mestrado Profissional em Administração Pública (PROFIAP)">Programa de Mestrado Profissional em Administração Pública (PROFIAP)</option>' ;
+curso+='<option value="Programa de Pós-Graduação em Administração (PPGA)">Programa de Pós-Graduação em Administração (PPGA)</option>' ;
+curso+='<option value="Programa de Pós-Graduação em Biblioteconomia (PPGB)">Programa de Pós-Graduação em Biblioteconomia (PPGB)</option>' ;
+curso+='<option value="Programa de Pós-Graduação em Ciência e Engenharia de Materiais">Programa de Pós-Graduação em Ciência e Engenharia de Materiais</option>' ;
+curso+='<option value="Programa de Pós-Graduação em Filosofia (PROF-FILO)">Programa de Pós-Graduação em em Filosofia (PROF-FILO)</option>' ;
+curso+='<option value="Programa de Pós-Graduação em Matemática (Profmat)">Programa de Pós-Graduação em em Matemática (Profmat)</option>' ;
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Especialização)"){
+             cursos+='<option value="Especialização em Engenharia de Infraestrutura Urbana">Especialização em Engenharia de Infraestrutura Urbana</option>' ;
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Graduação)"){
+             cursos+='<option value="Bacharelado em Administração">Bacharelado em Administração</option>' ;
+cursos+='<option value="Bacharelado em Administração Pública e Gestão Social">Bacharelado em Administração Pública e Gestão Social</option>' ;
+cursos+='<option value="Bacharelado em Arquivologia">Bacharelado em Arquivologia</option>' ;
+cursos+='<option value="Bacharelado em Biblioteconomia">Bacharelado em Biblioteconomia</option>' ;
+cursos+='<option value="Bacharelado em Ciência da Computação">Bacharelado em Ciência da Computação</option>' ;
+cursos+='<option value="Bacharelado em Ciências Contábeis">Bacharelado em Ciências Contábeis</option>' ;
+cursos+='<option value="Bacharelado em Design">Bacharelado em Design</option>' ;
+cursos+='<option value="Tecnólogo em Design de Produto">Tecnólogo em Design de Produto</option>' ;
+cursos+='<option value="Bacharelado em Engenharia Civil">Bacharelado em Engenharia Civil</option>' ;
+cursos+='<option value="Bacharelado em Engenharia de Materiais">Bacharelado em Engenharia de Materiais</option>' ;
+cursos+='<option value="Bacharelado em Engenharia de Software">Bacharelado em Engenharia de Software</option>' ;
+cursos+='<option value="Bacharelado em Filosofia">Bacharelado em Filosofia</option>' ;
+cursos+='<option value="Bacharelado em Jornalismo">Bacharelado em Jornalismo</option>' ;
+cursos+='<option value="Bacharelado em Matemática Computacional">Bacharelado em Matemática Computacional</option>' ;
+cursos+='<option value="Bacharelado em Museologia">Bacharelado em Museologia</option>' ;
+cursos+='<option value="Licenciatura em Filosofia">Licenciatura em Filosofia</option>' ;
+cursos+='<option value="Licenciatura em Letras / Libras">Licenciatura em Letras / Libras</option>' ;
+cursos+='<option value="Licenciatura em Música">Licenciatura em Música</option>' ;
+             }
+        }else if(cidade == "Ead"){
+             if(trabalho == "Tese"){
+             }else if(trabalho == "Dissertação"){
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Especialização)"){
+             cursos+='<option value="Especialização em Economia Solidária, Inovação e Gestão Social (EESIGS)">Especialização em Economia Solidária, Inovação e Gestão Social (EESIGS)</option>' ;
+cursos+='<option value="Especialização em Educação Bilíngue de Surdos">Especialização em Educação Bilíngue de Surdos</option>' ;
+cursos+='<option value="Especialização em Educação Musical">Especialização em Educação Musical</option>' ;
+cursos+='<option value="Especialização em Ensino de Ciências Naturais e Matemática (EECNM)">Especialização em Ensino de Ciências Naturais e Matemática (EECNM)</option>' ;
+cursos+='<option value="Especialização em Gestão Agropecuária">Especialização em Gestão Agropecuária</option>' ;
+cursos+='<option value="Especialização em Gestão Escolar e Assessoria Pedagógica (Egeape)">Especialização em Gestão Escolar e Assessoria Pedagógica (Egeape)</option>' ;
+cursos+='<option value="Especialização em Gestão Financeira (EGF)">Especialização em Gestão Financeira (EGF)</option>' ;
+cursos+='<option value="Especialização em Gestão Pública (EGP)">Especialização em Gestão Pública (EGP)</option>' ;
+             }else if(trabalho == "Trabalho de Conclusão de Curso (Graduação)"){
+             cursos+='<option value="Licenciatura em Filosofia">Licenciatura em Filosofia</option>' ;
+cursos+='<option value="Licenciatura em Matemática">Licenciatura em Matemática</option>' ;
+cursos+='<option value="Tecnólogo em Análise e Desenvolvimento de Sistemas">Tecnólogo em Análise e Desenvolvimento de Sistemas</option>' ;
+cursos+='<option value="Tecnólogo em Banco de Dados">Tecnólogo em Banco de Dados</option>' ;
+cursos+='<option value="Tecnólogo em Gestão Financeira">Tecnólogo em Gestão Financeira</option>' ;
+cursos+='<option value="Tecnólogo em Processos Gerenciais">Tecnólogo em Processos Gerenciais</option>' ;
+cursos+='<option value="Tecnólogo em Produção Multimídia">Tecnólogo em Produção Multimídia</option>' ;
+             }
+        }
+        document.getElementById("programa").innerHTML = cursos;
+    }
+  </script>
+    </body>
+</html>
