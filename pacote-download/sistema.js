@@ -2,14 +2,13 @@ function criarAlunos() {
     let q = quantidade.value;
 
     alunos.innerHTML = `
-    <span style="margin-right: 100px;">Aluno</span>
-    <span style="margin-right: 100px;">N1</span>
-    <span style="margin-right: 100px;">N2</span>
-    <span style="margin-right: 100px;">N3</span>
+    <span>Aluno</span>
+    <span>N1</span>
+    <span>N2</span>
+    <span>N3</span>
     <span>N4</span>
-`;
-
-    for (let i = 1; i <= q; i++) {
+    `;
+    for (let i = 1; i <= q; i++){
         alunos.innerHTML += `
             <p>
                 <input id="nome${i}">
@@ -19,8 +18,7 @@ function criarAlunos() {
                 <input id="n4${i}" type="number">
                 <span id="res${i}"></span>
             </p>
-        `;
-    }
+        `;}
 
     alunos.innerHTML += "<button onclick='calcular()'>Calcular</button>";
 }
@@ -52,7 +50,6 @@ function calcular() {
         }
 
         soma += media;
-
         document.getElementById("res" + i).innerHTML =
             ` Média: ${media.toFixed(2)} - ${situacao}`;
     }
