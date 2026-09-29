@@ -29,12 +29,12 @@ function calcular() {
 
     for (let i = 1; i <= q; i++) {
 
-        let media = (
-            Number(document.getElementById("n1" + i).value) +
-            2 * Number(document.getElementById("n2" + i).value) +
-            3 * Number(document.getElementById("n3" + i).value) +
-            4 * Number(document.getElementById("n4" + i).value)
-        ) / 10;
+        const n1 = Number(document.getElementById(`n1${i}`).value);
+        const n2 = Number(document.getElementById(`n2${i}`).value);
+        const n3 = Number(document.getElementById(`n3${i}`).value);
+        const n4 = Number(document.getElementById(`n4${i}`).value);
+
+        const media = (n1 + n2 * 2 + n3 * 3 + n4 * 4) / 10;
 
         let situacao;
 
