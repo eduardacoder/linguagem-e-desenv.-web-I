@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>SEINFO - Semana de Sistemas de Informação</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">SEINFO</h1>
+            <p class="tagline">Semana de Sistemas de Informação - IFCE Campus Crato</p>
+        </div>
+    </header>
+
+    <section class="about">
+        <div class="container">
+            <h2>Sobre a SEINFO</h2>
+            <p>A SEINFO é a Semana Acadêmica do curso de Sistemas de Informação do IFCE Campus Crato.
+                O evento tem como objetivo integrar a comunidade acadêmica ao mercado de tecnologia,
+                promovendo a troca de experiências e o aprendizado prático.</p>
+            <div class="info-badges">
+                <span> 06/12/2026 – 06/02/2027</span>
+                <span> - IFCE Campus Crato (Presencial + Transmissão Online)</span>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <section class="filters-section">
+            <input type="text" id="search-input" placeholder="Pesquisar evento pelo nome...">
+
+            <select id="category-filter">
+                <option value="todos">Todas as Categorias</option>
+                <option value="Segurança">Segurança da Informação</option>
+                <option value="Programação">Programação</option>
+                <option value="Carreira & Mercado">Carreira & Mercado</option>
+                <option value="Inteligência Artificial">Inteligência Artificial</option>
+            </select>
+        </section>
+
+        <section class="events-section">
+            <h2>Programação das Atividades</h2>
+            <div id="events-list" class="events-grid"></div>
+        </section>
+    </main>
+
+    <div id="event-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fecharModal()">&times;</span>
+
+            <div id="modal-details">
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <p><strong>Data:</strong> <span id="modal-date"></span></p>
+                <p><strong>Horário:</strong> <span id="modal-time"></span></p>
+                <p><strong>Local:</strong> <span id="modal-location"></span></p>
+                <p><strong>Vagas Disponíveis:</strong> <span id="modal-vacancies" class="badge-vagas"></span></p>
+                <button id="btn-abrir-inscricao" class="btn-primary" onclick="mostrarFormulario()">Realizar Inscrição</button>
+            </div>
+
+            <form id="subscription-form" class="hidden" onsubmit="confirmarInscricao(event)">
+                <h3>Formulário de Inscrição</h3>
+
+                <div class="form-group">
+                    <label for="user-name">Nome Completo:</label>
+                    <input type="text" id="user-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-email">E-mail:</label>
+                    <input type="email" id="user-email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="user-phone">Telefone:</label>
+                    <input type="tel" id="user-phone" placeholder="(88) 99999-9999" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-primary">Confirmar Inscrição</button>
+                    <button type="button" class="btn-secondary" onclick="esconderFormulario()">Voltar</button>
+                </div>
+            </form>
+
+            <div id="confirmation-message" class="hidden alert-success">
+                ✅ Inscrição realizada com sucesso! Enviamos os detalhes para o seu e-mail.
+            </div>
+        </div>
+    </div>
+
+    <script src="sistema.js"></script>
+</body>
+</html>
