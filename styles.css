@@ -5,44 +5,57 @@
 
 body {
     margin: 0;
-    background: #f4f4f4;
-    color: #333;
+    background: #f5f5f5;
+    color: #222;
 }
 
-.container {
-    max-width: 1000px;
+.conteudo-centralizado {
+    width: 90%;
     margin: auto;
-    padding: 20px;
 }
 
-.header,
-.btn-primary {
-    background: #2d075f;
+.cabecalho,
+.botao-principal {
+    background: #593f96;
     color: white;
-    text-align: center;
-    padding: 20px;
 }
 
-.about,
-.card,
-.modal-content {
+.cabecalho {
+    padding: 20px;
+    text-align: center;
+}
+
+.identidade-seinfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.identidade-seinfo img {
+    width: 120px;
+    height: 120px;
+}
+
+.sobre-seinfo,
+.cartao-evento,
+.conteudo-modal {
     background: white;
     padding: 20px;
 }
 
-.info-badges,
-.filters-section,
-.events-grid,
-.form-actions {
+.informacoes-seinfo,
+.area-filtros,
+.acoes-formulario {
     display: flex;
-    gap: 10px;
     flex-wrap: wrap;
+    gap: 10px;
     margin: 15px 0;
 }
 
-.events-grid {
+.lista-eventos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
 }
 
 input,
@@ -53,41 +66,62 @@ button {
 
 button {
     border: 0;
-    cursor: pointer;
 }
 
-.modal {
+.janela-modal {
     position: fixed;
     inset: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #0009;
+    background: #0008;
 }
 
-.modal-content {
+.conteudo-modal {
     position: relative;
     width: 90%;
     max-width: 500px;
 }
 
-.close-btn {
+.botao-fechar-modal {
     position: absolute;
     top: 10px;
     right: 15px;
     cursor: pointer;
 }
 
-.hidden {
-    display: none !important;
-}
-
-.form-group input {
+.grupo-campo input {
     display: block;
     width: 100%;
 }
 
-.alert-success {
-    padding: 15px;
+.oculto {
+    display: none !important;
+}
+
+.mensagem {
     background: #d4edda;
 }
+
+/*EXPLICAÇÃO DO CÓDIGO CSS:
+
+No styles.css, cada bloco seleciona elementos da página e define como eles aparecem:
+
+- `*`: aplica `box-sizing: border-box` e a fonte Arial a todos os elementos. Com `border-box`, bordas e espaçamentos são incluídos no tamanho definido.
+- `body`: remove a margem padrão, define um fundo cinza-claro e a cor do texto.
+- `.conteudo-centralizado`: deixa o conteúdo com 90% da largura e o centraliza na página.
+- `.cabecalho, .botao-principal`: aplica fundo roxo e texto branco ao cabeçalho e aos botões principais.
+- `.cabecalho`: adiciona espaço interno e centraliza o texto.
+- `.identidade-seinfo`: organiza o logo e o nome lado a lado, alinhados ao centro e separados por 10 pixels.
+- `.identidade-seinfo img`: define a largura e a altura do logo em 120 pixels.
+- `.sobre-seinfo, .cartao-evento, .conteudo-modal`: dá fundo branco e espaço interno à seção sobre, aos cartões de eventos e ao conteúdo do modal.
+- `.informacoes-seinfo, .area-filtros, .acoes-formulario`: organiza esses elementos em linhas flexíveis, com espaço entre eles e margem vertical.
+- `.lista-eventos`: organiza os cartões em uma grade com espaço de 15 pixels entre eles.
+- `input, select, button`: adiciona espaço interno aos campos, seletores e botões.
+- `button`: remove a borda padrão dos botões.
+- `.janela-modal`: cobre a tela, centraliza o conteúdo e aplica um fundo preto semitransparente.
+- `.conteudo-modal`: posiciona o conteúdo do modal e limita sua largura a 500 pixels.
+- `.botao-fechar-modal`: posiciona o botão de fechar no canto superior direito e mostra o cursor de clique.
+- `.grupo-campo input`: faz os campos do formulário ocuparem toda a largura disponível.
+- `.oculto`: esconde o elemento. `!important` faz essa regra prevalecer sobre outras regras de exibição.
+- `.mensagem-sucesso`: define o fundo verde-claro da mensagem de confirmação.*/

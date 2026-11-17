@@ -5,28 +5,31 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1 class="logo">SEINFO</h1>
+    <header class="cabecalho">
+        <div class="conteudo-centralizado">
+            <div class="identidade-seinfo">
+                <img src="logosi.jpg" alt="Logo da SEINFO">
+                <h1 class="logo">SEINFO</h1>
+            </div>
             <p class="tagline">Semana de Sistemas de Informação - IFCE Campus Crato</p>
         </div>
     </header>
 
-    <section class="about">
-        <div class="container">
+    <section class="sobre-seinfo">
+        <div class="conteudo-centralizado">
             <h2>Sobre a SEINFO</h2>
             <p>A SEINFO é a Semana Acadêmica do curso de Sistemas de Informação do IFCE Campus Crato.
                 O evento tem como objetivo integrar a comunidade acadêmica ao mercado de tecnologia,
                 promovendo a troca de experiências e o aprendizado prático.</p>
-            <div class="info-badges">
+            <div class="informacoes-seinfo">
                 <span> 06/12/2026 – 06/02/2027</span>
                 <span> - IFCE Campus Crato (Presencial + Transmissão Online)</span>
             </div>
         </div>
     </section>
 
-    <main class="container">
-        <section class="filters-section">
+    <main class="conteudo-centralizado">
+        <section class="area-filtros">
             <input type="text" id="search-input" placeholder="Pesquisar evento pelo nome...">
 
             <select id="category-filter">
@@ -40,13 +43,13 @@
 
         <section class="events-section">
             <h2>Programação das Atividades</h2>
-            <div id="events-list" class="events-grid"></div>
+            <div id="events-list" class="lista-eventos"></div>
         </section>
     </main>
 
-    <div id="event-modal" class="modal hidden">
-        <div class="modal-content">
-            <span class="close-btn" onclick="fecharModal()">&times;</span>
+    <div id="event-modal" class="janela-modal oculto">
+        <div class="conteudo-modal">
+            <span class="botao-fechar-modal" onclick="fecharModal()">&times;</span>
 
             <div id="modal-details">
                 <h2 id="modal-title"></h2>
@@ -54,40 +57,85 @@
                 <p><strong>Data:</strong> <span id="modal-date"></span></p>
                 <p><strong>Horário:</strong> <span id="modal-time"></span></p>
                 <p><strong>Local:</strong> <span id="modal-location"></span></p>
-                <p><strong>Vagas Disponíveis:</strong> <span id="modal-vacancies" class="badge-vagas"></span></p>
-                <button id="btn-abrir-inscricao" class="btn-primary" onclick="mostrarFormulario()">Realizar Inscrição</button>
+                <p><strong>Vagas Disponíveis:</strong> <span id="modal-vacancies" class="marcador-vagas"></span></p>
+                <button id="btn-abrir-inscricao" class="botao-principal" onclick="mostrarFormulario()">Realizar Inscrição</button>
             </div>
 
-            <form id="subscription-form" class="hidden" onsubmit="confirmarInscricao(event)">
+            <form id="subscription-form" class="oculto" onsubmit="confirmarInscricao(event)">
                 <h3>Formulário de Inscrição</h3>
 
-                <div class="form-group">
+                <div class="campo-inscricao">
                     <label for="user-name">Nome Completo:</label>
                     <input type="text" id="user-name" required>
                 </div>
 
-                <div class="form-group">
+                <div class="campo-inscricao">
                     <label for="user-email">E-mail:</label>
                     <input type="email" id="user-email" required>
                 </div>
 
-                <div class="form-group">
+                <div class="campo-inscricao">
                     <label for="user-phone">Telefone:</label>
                     <input type="tel" id="user-phone" placeholder="(88) 99999-9999" required>
                 </div>
 
-                <div class="form-actions">
-                    <button type="submit" class="btn-primary">Confirmar Inscrição</button>
-                    <button type="button" class="btn-secondary" onclick="esconderFormulario()">Voltar</button>
+                <div class="acoes-formulario">
+                    <button type="submit" class="botao-principal">Confirmar Inscrição</button>
+                    <button type="button" class="botao-secundario" onclick="esconderFormulario()">Voltar</button>
                 </div>
             </form>
 
-            <div id="confirmation-message" class="hidden alert-success">
-                ✅ Inscrição realizada com sucesso! Enviamos os detalhes para o seu e-mail.
+            <div id="confirmation-message" class="oculto-mensagem">
+                Inscrição realizada com sucesso! Enviamos os detalhes para o seu e-mail.
             </div>
         </div>
     </div>
 
     <script src="sistema.js"></script>
+
+    <!--
+    EXPLICACAO DO HTML:
+
+    - <!DOCTYPE html> informa ao navegador que este documento usa HTML5.
+    - <html lang="pt-BR"> inicia a pagina e informa que o idioma e portugues do Brasil.
+    - <head> guarda configuracoes da pagina que nao aparecem como conteudo:
+      <title> define o texto da aba do navegador e <link> carrega o arquivo de estilos.
+    - <body> contem tudo que aparece ou pode ser usado na pagina.
+
+    CABECALHO E APRESENTACAO:
+    - <header> contem o cabecalho do site.
+    - A imagem mostra o logo; o atributo alt descreve a imagem para acessibilidade.
+    - <h1> mostra o titulo principal e <p> apresenta o nome do evento.
+    - A secao "sobre-seinfo" apresenta uma descricao da SEINFO, as datas e o local.
+    - <div> agrupa elementos relacionados para organizar o conteudo e aplicar estilos.
+
+    LISTA E FILTROS:
+    - <main> envolve o conteudo principal da pagina.
+    - O campo <input> permite pesquisar eventos pelo nome. Seu id permite que o
+      JavaScript leia o texto digitado.
+    - <select> cria o menu de categorias e cada <option> e uma opcao desse menu.
+      Os valores das opcoes sao usados pelo JavaScript para filtrar os eventos.
+    - A secao "events-section" tem o titulo da programacao.
+    - A div com id "events-list" comeca vazia; o JavaScript coloca os cartoes de
+      eventos dentro dela.
+
+    MODAL DE DETALHES E INSCRICAO:
+    - A div com id "event-modal" e a janela que mostra os detalhes de um evento.
+      A classe "oculto" faz a janela comecar escondida.
+    - A div "modal-details" contem os campos que o JavaScript preenche com os
+      dados do evento selecionado.
+    - O botao de fechar chama fecharModal() no JavaScript.
+    - O botao de inscricao chama mostrarFormulario() para exibir o formulario.
+    - <form> agrupa os campos de inscricao. O atributo onsubmit chama
+      confirmarInscricao(event) quando o formulario e enviado.
+    - Cada <label> identifica um campo. O atributo for aponta para o id do campo.
+    - Os campos de nome, e-mail e telefone usam tipos apropriados; required
+      indica que precisam ser preenchidos antes do envio.
+    - O botao "Confirmar Inscricao" envia o formulario; o botao "Voltar" apenas
+      chama esconderFormulario() e retorna aos detalhes.
+    - A div "confirmation-message" contem a mensagem mostrada apos a inscricao.
+    - O <script> carrega o arquivo sistema.js, que controla filtros, cartoes,
+      modal e inscricoes.
+    -->
 </body>
 </html>
